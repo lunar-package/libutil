@@ -1,0 +1,12 @@
+description = "Table utility"
+files = ["*"]
+main = "./lib/init.luau"
+name = "table"
+owner = "lune-package"
+repository = "https://github.com/lune-package/table"
+version = "0.1.0"
+keywords = ["lune", "luau", "table"]
+
+[dependencies]
+
+[dev_dependencies]
