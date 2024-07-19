@@ -1,9 +1,9 @@
-description = "Table utility"
+description = "Utilities for lune luau"
 files = ["*"]
 main = "./lib/init.luau"
-name = "table"
+name = "libutil"
 owner = "lune-package"
-repository = "https://github.com/lune-package/table"
+repository = "https://github.com/lune-package/libutil.git"
 version = "0.1.0"
 keywords = ["lune", "luau", "table"]
 
