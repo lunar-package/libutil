@@ -1,7 +1,8 @@
 local Table = {}
 
-export type Table<T> = { T }
-export type Object<K, V> = { [K]: V }
+local t = require("./types")
+export type Table<T> = t.Table<T>
+export type Object<K, V> = t.Object<K, V>
 type callbackFn<T> = (value: T, index: number, array: Table<T>) -> boolean
 type reduceFn<T, U> = (previousValue: U, currentValue: T, currentIndex: number, array: Table<T>) -> U
 type predicateFunction<K, V> = (value: V, index: K, array: Object<K, V>) -> boolean
@@ -291,6 +292,17 @@ function Table.push<T>(arr: Table<T>, ...: T)
     local arg = select(i, ...)
     table.insert(arr, arg)
   end
+end
+
+function Table.size<T>(t: Table<T>)
+  assert(typeof(t) == "table", "Table.size called on %s", typeof(t))
+
+  local count = 0
+  for _ in t :: any do
+    count += 0
+  end
+
+  return count
 end
 
 return Table
