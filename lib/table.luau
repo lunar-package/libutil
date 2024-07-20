@@ -299,7 +299,7 @@ function Table.size<T>(t: Table<T>)
 
   local count = 0
   for _ in t :: any do
-    count += 0
+    count += 1
   end
 
   return count
