@@ -294,7 +294,10 @@ function Table.push<T>(arr: Table<T>, ...: T)
   end
 end
 
-function Table.size<T>(t: Table<T>)
+function Table.size<T>(t: Table<T>, force: boolean?)
+  if force and typeof(t) ~= "table" then
+    return 0
+  end
   assert(typeof(t) == "table", "Table.size called on %s", typeof(t))
 
   local count = 0
