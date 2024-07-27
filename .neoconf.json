@@ -5,10 +5,7 @@
       "luau-lsp.requiredirectoryAliases": {
         "@lune/": "~/.lune/.typedefs/0.8.6/"
       },
-      "luau-lsp.platform.type": "standard",
-      "luau-lsp.inlayHints.functionReturnTypes": true,
-      "luau-lsp.inlayHints.parameterTypes": true,
-      "luau-lsp.inlayHints.typeHintMaxLength": 50
+      "luau-lsp.platform.type": "standard"
     }
   }
 }

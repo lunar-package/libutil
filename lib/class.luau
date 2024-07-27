@@ -1,12 +1,20 @@
 --!nocheck
---[[
-	Construct utility method for centralising all hacky metatable stuff.
-]]
-
-local Table = require("./table")
 
 local function failCall(self: any, callType: string)
   error(`Invoked unsupported metamethod '{callType}' on object '{tostring(self)}'`, 3)
+end
+
+local function tableSize<T>(t: T)
+  if typeof(t) ~= "table" then
+    return 0
+  end
+
+  local count = 0
+  for k in t :: any do
+    count += 1
+  end
+
+  return count
 end
 
 local Class = {}
@@ -177,7 +185,7 @@ function Class.construct<S, P>(
     })
   end
 
-  if Table.size(source) > 0 then
+  if tableSize(source) > 0 then
     for key, value in source do
       object[key] = value
     end

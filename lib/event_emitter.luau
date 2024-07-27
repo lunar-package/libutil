@@ -1,6 +1,5 @@
 local class = require("./class")
 
-local table = require("./table")
 local types = require("./types")
 
 type EventEmitter = types.EventEmitter
@@ -37,7 +36,7 @@ function EventEmitter.prototype.addListener<T...>(self: EventEmitter, type: stri
   if not existing then
     events[type] = { listener }
   else
-    table.push(existing, listener)
+    table.insert(existing, listener)
   end
 
   return self
@@ -107,7 +106,9 @@ function EventEmitter.prototype.removeListener<T...>(self: EventEmitter, type: s
   end
 
   if position == 1 then
-    table.shift(list)
+    if #list > 0 then
+      table.remove(list, 1)
+    end
   else
     print()
   end
